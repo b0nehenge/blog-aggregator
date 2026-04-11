@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: gator-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: gator
+    ports:
+      - "5432:5432"
+    volumes:
+      - gator-db-data:/var/lib/postgresql
+
+volumes:
+  gator-db-data:
