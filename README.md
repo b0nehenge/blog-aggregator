@@ -14,7 +14,7 @@ A CLI-based RSS feed aggregator written in Go. Gator allows users to register, l
 
 Before installing Gator, ensure you have the following:
 
-- **Go**: 1.22 or higher.
+- **Go**: 1.26 or higher.
 - **PostgreSQL**: A running instance with a database for Gator.
 - **sqlc** (Optional): Only needed for regenerating database code from SQL queries.
 
@@ -61,7 +61,8 @@ Run Gator using the following command structure:
 - `follow <feed_url>`: Follow an existing feed by its URL (requires being logged in).
 - `following`: List all feeds followed by the current user (requires being logged in).
 - `unfollow <feed_url>`: Unfollow a feed by its URL (requires being logged in).
-- `agg`: Currently a development command to test RSS fetching.
+- `agg <time_between_reqs>`: Continuously fetch and store posts from all followed feeds. Example: `agg 1m`.
+- `browse [limit]`: View the latest posts from feeds followed by the current user. Default limit is 2.
 - `reset`: Clear all users and feeds from the database (use with caution!).
 
 ## License
